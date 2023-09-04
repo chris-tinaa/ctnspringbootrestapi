@@ -1,6 +1,9 @@
 package com.juaracoding.cspringbootrestapi.model;
 
+import com.juaracoding.cspringbootrestapi.util.ConstantCalonPeserta;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "Peserta")

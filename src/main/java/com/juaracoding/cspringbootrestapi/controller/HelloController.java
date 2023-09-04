@@ -1,11 +1,13 @@
 package com.juaracoding.cspringbootrestapi.controller;
 
+import com.juaracoding.cspringbootrestapi.configuration.OtherConfiguration;
 import com.juaracoding.cspringbootrestapi.model.CalonPeserta;
 import com.juaracoding.cspringbootrestapi.util.FileUtility;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.validation.Valid;
 import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
@@ -17,11 +19,12 @@ public class HelloController {
 
     @GetMapping("/permisi")
     public String firstPage() {
-        return "welcome";
+        System.out.println("Value Flag Loging : "+ OtherConfiguration.getFlagLoging());
+        return OtherConfiguration.getFlagLoging();
     }
 
     @PostMapping("/seleksi")
-    public String seleksiCalonPeserta(@RequestBody CalonPeserta calon) {
+    public String seleksiCalonPeserta(@Valid @RequestBody CalonPeserta calon) {
         if (calon.getNilai() > 80 && calon.getUmur() >= 18 && calon.getUmur() <= 60) {
             return calon.getNama() + " lolos seleksi";
         } else {
