@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.core.env.Environment;
+import org.modelmapper.ModelMapper;
 
 import javax.sql.DataSource;
 
@@ -27,6 +28,9 @@ public class MainConfiguration {
         return dataSourceBuilder.build();
     }
 
-
+    @Bean
+    public ModelMapper modelMapper(){
+        return new ModelMapper();
+    }
 
 }

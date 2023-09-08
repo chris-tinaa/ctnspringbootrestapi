@@ -10,6 +10,28 @@ public class OtherConfiguration {
 
     private static String flagLoging;
 
+    private static String flagLogTable;
+    private static String flagSmtpActive;
+
+    public static String getFlagSmtpActive() {
+        return flagSmtpActive;
+    }
+
+    @Value("${flag.smtp.active}")
+    private void setFlagSmtpActive(String flagSmtpActive) {
+        OtherConfiguration.flagSmtpActive = flagSmtpActive;
+    }
+
+    public static String getFlagLogTable() {
+        return flagLogTable;
+    }
+
+    @Value("${flag.log.table}")
+    private void setFlagLogTable(String flagLogTable) {
+        OtherConfiguration.flagLogTable = flagLogTable;
+    }
+
+
     public static String getFlagLoging() {
         return flagLoging;
     }

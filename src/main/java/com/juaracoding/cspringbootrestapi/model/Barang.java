@@ -16,7 +16,7 @@ public class Barang implements Serializable {
     @Column(name = "NamaBarang")
     private String namaBarang;
 
-    @Column(name = "Deskripsi",columnDefinition = "CHAR(50)")
+    @Column(name = "Deskripsi", columnDefinition = "VARCHAR(50)")
     private String deskripsi;
 
     @ManyToOne
